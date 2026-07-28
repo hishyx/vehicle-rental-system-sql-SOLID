@@ -1,9 +1,13 @@
 import { Router } from "express";
 import * as vehicleControllers from "../controllers/vehicleController.js"
 import * as rentalControllers from "../controllers/rentalController.js"
+import * as globalControllers from "../controllers/globalController.js"
+import * as customerControllers from "../controllers/customerController.js"
 
 
 const router = Router();
+
+router.get("/", globalControllers.showDashboard)
 
 router.get("/vehicles/add", vehicleControllers.addVehiclePage)
 
@@ -22,11 +26,17 @@ router
 router
     .route("/rentals")
     .get(rentalControllers.listRentals)
+
+
+router
+    .route("/rentals/add/:vehicleId")
+    .get(rentalControllers.rentalDetailsPage)
     .post(rentalControllers.takeRental)
 
-router.get("/rentals/:id/return", rentalControllers.returnRental)
+router.patch("/rentals/:id/return", rentalControllers.returnRental)
 
-router.get("/customer", rentalControllers.listCustomers)
+router.get("/customers", customerControllers.listCustomers)
+
 
 
 export default router;

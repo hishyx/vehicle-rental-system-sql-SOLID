@@ -6,15 +6,7 @@ import type { Vehicle as PrismaVehicle } from "@prisma/client";
 export default class VehicleRepository implements isVehicleRepository {
 
     private toDomain(vehicle: PrismaVehicle): Vehicle {
-        return new Vehicle(
-            vehicle.id,
-            vehicle.brand,
-            vehicle.model,
-            vehicle.year,
-            vehicle.licensePlate,
-            vehicle.dailyRate,
-            vehicle.isAvailable
-        );
+        return new Vehicle(vehicle);
     }
 
 
@@ -41,11 +33,11 @@ export default class VehicleRepository implements isVehicleRepository {
         return this.toDomain(vehicle)
     }
 
-    async getVehicle(id: number): Promise<Vehicle | null> {
+    async getVehicle(id: number): Promise<Vehicle> {
 
         const vehicle = await prisma.vehicle.findUnique({ where: { id } })
 
-        if (!vehicle) return null;
+        if (!vehicle) throw Error("No vehicle found");
 
         return this.toDomain(vehicle)
 

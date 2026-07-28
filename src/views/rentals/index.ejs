@@ -15,7 +15,7 @@
                     Rental</span></a>
             <nav class="side-nav"><a class="side-link" href="/">Dashboard</a><a class="side-link"
                     href="/vehicles">Vehicles</a><a class="side-link active" href="/rentals">Rentals</a><a
-                    class="side-link" href="/customer">Customers</a></nav>
+                    class="side-link" href="/customers">Customers</a></nav>
         </aside>
         <section class="workspace">
             <header class="topbar">Vehicle Rental System</header>
@@ -36,6 +36,7 @@
                                     <th>Rent Date</th>
                                     <th>Return Date</th>
                                     <th>Status</th>
+                                    <th>Action</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -49,19 +50,24 @@
                                             <%= rental.vehicleName %>
                                         </td>
                                         <td>
-                                            <%= rental.rentDate %>
+                                            <%= new Date(rental.startDate).toLocaleDateString("en-GB"); %>
                                         </td>
                                         <td>
-                                            <%= rental.returnDate || '—' %>
+                                            <%= new Date(rental.endDate).toLocaleDateString("en-GB")|| '—' %>
                                         </td>
                                         <td><span class="status status-rented">
                                                 <%= rental.status %>
                                             </span></td>
+                                        <td>
+                                            <form action="/rentals/<%= rental.id %>/return?_method=PATCH" method="POST">
+                                                <button type="submit" class="btn btn-sm btn-primary">Return</button>
+                                            </form>
+                                        </td>
                                     </tr>
                                     <% }) %>
                                         <% if (rentals.length===0) { %>
                                             <tr>
-                                                <td colspan="6" class="empty-state">No rentals found.</td>
+                                                <td colspan="7" class="empty-state">No rentals found.</td>
                                             </tr>
                                             <% } %>
                             </tbody>

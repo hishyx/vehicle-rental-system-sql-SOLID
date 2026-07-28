@@ -4,7 +4,8 @@ export interface updatedVehicleDetails {
     model?: string,
     year?: number,
     licensePlate?: string,
-    dailyRate?: number
+    dailyRate?: number,
+    isAvailable?: boolean
 }
 
 export interface newVehicleDetails {
@@ -23,7 +24,7 @@ export interface isVehicleRepository {
 
     updateVehicle(id: number, data: updatedVehicleDetails): Promise<Vehicle | null>;
 
-    getVehicle(id: number): Promise<Vehicle | null>;
+    getVehicle(id: number): Promise<Vehicle>;
 
     getAllVehicles(): Promise<Vehicle[]>
 

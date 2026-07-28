@@ -15,7 +15,7 @@
                     Rental</span></a>
             <nav class="side-nav"><a class="side-link active" href="/">Dashboard</a><a class="side-link"
                     href="/vehicles">Vehicles</a><a class="side-link" href="/rentals">Rentals</a><a class="side-link"
-                    href="/customer">Customers</a></nav>
+                    href="/customers">Customers</a></nav>
         </aside>
         <section class="workspace">
             <header class="topbar">Vehicle Rental System</header>
@@ -28,27 +28,27 @@
                 <div class="row g-3 g-xl-4">
                     <div class="col-sm-6 col-xl">
                         <article class="stat-card"><span>Total Vehicles</span><strong>
-                                <%= totalVehicles %>
+                                <%= totalVehicles || "No data" %>
                             </strong></article>
                     </div>
                     <div class="col-sm-6 col-xl">
                         <article class="stat-card accent"><span>Available Vehicles</span><strong>
-                                <%= availableVehicles %>
+                                <%= availableVehicles || "No data" %>
                             </strong></article>
                     </div>
                     <div class="col-sm-6 col-xl">
                         <article class="stat-card"><span>Rented Vehicles</span><strong>
-                                <%= rentedVehicles %>
+                                <%= rentedVehicles || "No data" %>
                             </strong></article>
                     </div>
                     <div class="col-sm-6 col-xl">
                         <article class="stat-card"><span>Total Customers</span><strong>
-                                <%= totalCustomers %>
+                                <%= totalCustomers || "No data" %>
                             </strong></article>
                     </div>
                     <div class="col-sm-6 col-xl">
                         <article class="stat-card"><span>Active Rentals</span><strong>
-                                <%= activeRentals %>
+                                <%= activeRentals || "No data" %>
                             </strong></article>
                     </div>
                 </div>

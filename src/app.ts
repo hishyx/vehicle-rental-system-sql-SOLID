@@ -7,7 +7,6 @@ import allRouters from "./routes/routes.js";
 
 const app = express();
 
-app.use(methodOverride("_method"));
 
 
 // Needed because you're using ES Modules
@@ -17,6 +16,9 @@ const __dirname = path.dirname(__filename);
 // Middleware
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+
+app.use(methodOverride("_method"));
+
 
 // EJS setup
 app.set("view engine", "ejs");

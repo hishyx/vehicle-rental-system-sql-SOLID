@@ -15,7 +15,7 @@
                     Rental</span></a>
             <nav class="side-nav"><a class="side-link" href="/">Dashboard</a><a class="side-link active"
                     href="/vehicles">Vehicles</a><a class="side-link" href="/rentals">Rentals</a><a class="side-link"
-                    href="/customer">Customers</a></nav>
+                    href="/customers">Customers</a></nav>
         </aside>
         <section class="workspace">
             <header class="topbar">Vehicle Rental System</header>
@@ -64,13 +64,11 @@
                                                 class="status <%= vehicle.isAvailable ? 'status-available' : 'status-rented' %>">
                                                 <%= vehicle.isAvailable ? 'Available' : 'Rented' %>
                                             </span></td>
-                                        <td class="text-end"><a class="btn btn-sm btn-quiet"
-                                                href="/vehicles/<%= vehicle.id %>">Edit</a>
-                                            <form
-                                                class="d-inline"
-                                                action="/vehicles/<%= vehicle.id %>?_method=DELETE"
-                                                method="POST"
-                                            >
+                                        <td class="text-end"><a class="btn btn-sm btn-primary"
+                                                href="/rentals/add/<%= vehicle.id %>">Rent</a>
+                                            <a class="btn btn-sm btn-quiet" href="/vehicles/<%= vehicle.id %>">Edit</a>
+                                            <form class="d-inline" action="/vehicles/<%= vehicle.id %>?_method=DELETE"
+                                                method="POST">
                                                 <button class="btn btn-sm btn-danger-quiet" type="submit">
                                                     Delete
                                                 </button>
