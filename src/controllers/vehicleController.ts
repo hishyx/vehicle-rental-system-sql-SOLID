@@ -7,8 +7,6 @@ export async function listVehicles(req: Request, res: Response) {
 
     const result = await vehicleService.getAllVehicles()
 
-
-
     res.render("vehicles/index.ejs", { vehicles: result })
 }
 
