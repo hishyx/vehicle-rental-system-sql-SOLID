@@ -1,4 +1,5 @@
-import type { isRentalRepository, isRentalDetails } from "../interfaces/IrentalRepository.js";
+import type { isRentalRepository } from "../interfaces/IrentalRepository.js";
+import type { isRentalDetails } from "../dto/rentalDetails.js";
 import prisma from "../config/db.js";
 import Rental from "../models/Rental.js";
 import type { Rental as PrismaRental } from "@prisma/client";

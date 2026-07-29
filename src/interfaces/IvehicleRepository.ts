@@ -1,20 +1,8 @@
 import Vehicle from "../models/Vehicle.js";
 
-export interface updatedVehicleDetails {
-    model?: string,
-    year?: number,
-    licensePlate?: string,
-    dailyRate?: number,
-    isAvailable?: boolean
-}
+import type { newVehicleDetails } from "../dto/newVehicleDetails.js";
 
-export interface newVehicleDetails {
-    brand: string;
-    model: string;
-    year: number;
-    licensePlate: string;
-    dailyRate: number;
-}
+import type { updatedVehicleDetails } from "../dto/updatedVehicleDetails.js";
 
 export interface isVehicleRepository {
 

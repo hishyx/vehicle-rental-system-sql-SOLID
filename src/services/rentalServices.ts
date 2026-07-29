@@ -23,7 +23,9 @@ export default class RentalService implements isRentalService {
 
         for (let r of rentals) {
             r.customerName = (await this.customerRepository.getCustomer(r.customerId)).name
-            r.vehicleName = (await this.vehicleRepository.getVehicle(r.vehicleId)).model
+
+            const vehicle = await this.vehicleRepository.getVehicle(r.vehicleId)
+            r.vehicleName = vehicle.brand + " - " + vehicle.model
         }
 
 

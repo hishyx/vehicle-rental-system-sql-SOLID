@@ -1,9 +1,12 @@
 import type isVehicleService from "../interfaces/IVehicleService.js";
 import type {
     isVehicleRepository,
-    newVehicleDetails,
-    updatedVehicleDetails
 } from "../interfaces/IvehicleRepository.js";
+
+
+import type { newVehicleDetails } from "../dto/newVehicleDetails.js";
+
+import type { updatedVehicleDetails } from "../dto/updatedVehicleDetails.js";
 
 import Vehicle from "../models/Vehicle.js";
 

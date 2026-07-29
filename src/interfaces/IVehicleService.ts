@@ -1,8 +1,9 @@
 import Vehicle from "../models/Vehicle.js";
-import type {
-    newVehicleDetails,
-    updatedVehicleDetails
-} from "./IvehicleRepository.js";
+
+
+import type { newVehicleDetails } from "../dto/newVehicleDetails.js";
+
+import type { updatedVehicleDetails } from "../dto/updatedVehicleDetails.js";
 
 export default interface isVehicleService {
 

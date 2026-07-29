@@ -1,4 +1,8 @@
-import type { isVehicleRepository, updatedVehicleDetails, newVehicleDetails } from "../interfaces/IvehicleRepository.js";
+import type { isVehicleRepository, } from "../interfaces/IvehicleRepository.js";
+
+import type { newVehicleDetails } from "../dto/newVehicleDetails.js";
+
+import type { updatedVehicleDetails } from "../dto/updatedVehicleDetails.js";
 import Vehicle from "../models/Vehicle.js";
 import prisma from "../config/db.js";
 import type { Vehicle as PrismaVehicle } from "@prisma/client";

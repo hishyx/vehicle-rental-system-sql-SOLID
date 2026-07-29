@@ -1,11 +1,6 @@
 import Rental from "../models/Rental.js";
 
-export type isRentalDetails = {
-    vehicleId: number,
-    customerId: number,
-    startDate: Date,
-    endDate: Date | null
-}
+import type { isRentalDetails } from "../dto/rentalDetails.js";
 
 export interface isRentalRepository {
 

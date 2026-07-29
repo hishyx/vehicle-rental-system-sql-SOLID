@@ -64,8 +64,10 @@
                                                 class="status <%= vehicle.isAvailable ? 'status-available' : 'status-rented' %>">
                                                 <%= vehicle.isAvailable ? 'Available' : 'Rented' %>
                                             </span></td>
-                                        <td class="text-end"><a class="btn btn-sm btn-primary"
-                                                href="/rentals/add/<%= vehicle.id %>">Rent</a>
+                                        <td class="text-end">
+                                            <% if (vehicle.isAvailable) { %>
+                                                <a class="btn btn-sm btn-primary" href="/rentals/add/<%= vehicle.id %>">Rent</a>
+                                            <% } %>
                                             <a class="btn btn-sm btn-quiet" href="/vehicles/<%= vehicle.id %>">Edit</a>
                                             <form class="d-inline" action="/vehicles/<%= vehicle.id %>?_method=DELETE"
                                                 method="POST">
