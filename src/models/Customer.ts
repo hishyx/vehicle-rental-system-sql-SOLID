@@ -13,10 +13,8 @@ export default class Customer extends User {
     }
 
     rentVehicle() {
-        // ...
     }
 
     returnVehicle() {
-        // ...
     }
 }

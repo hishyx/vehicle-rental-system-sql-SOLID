@@ -13,10 +13,8 @@ export default class Admin extends User {
     }
 
     addVehicle() {
-        // ...
     }
 
     removeVehicle() {
-        // ...
     }
 }
